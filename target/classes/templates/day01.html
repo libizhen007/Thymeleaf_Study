@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+	controller的内容：<h1 th:text="${name}"></h1>session对象值需要用session.age:<h1 th:text="${session.age}"></h1>
+	data语法:<span data-th-text="${name}"></span>
+	<br/>下面是一张图片,遇到/image会默认到static目录下的image目录找寻
+	<img alt="" th:src="@{/image/t0147c303e72c244f81.jpg}" width="135"/>
+	同上
+	<br/>下面是一张图片,遇到/image会默认到static目录下的image目录找寻<img alt="" src="/image/t0147c303e72c244f81.jpg" width="135"/>
+	
+	
+	<br/>
+	自定义静态资源目录：<img th:src="@{/newaa/p2564.jpg}" width="135"/>
+	
+	<br/>
+	对象获取<h1 th:text="${user.username}"></h1>
+	<br/>
+	<h2>上下文使用</h2>
+	<br/>
+	${x} : 请求属性 <b th:text="${name}">request.getAttribute()</b><br/>
+	${param.x} : 请求参数 <b th:text="${param.id}">request.getPara)</b><br/>
+	${session.x} : 会话属性 <b th:text="${session.age}">session.gettAttribute()</b><br/>
+	${application.x}servlet上下文属性  <b th:text="${application.context}">session.gettAttribute()</b><br/>
+	非转义文本<b th:utext="${html}"></b>
+	<script type="text/javascript">
+	
+	</script>
+</body>
+</html>

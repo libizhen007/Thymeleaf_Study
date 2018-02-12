@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Thymaleaf模板的使用</title>
+</head>
+<body>
+<p th:text="${user.getUsername()}"></p>
+<p th:text="${as[1].substring(0, 1)}"></p>
+<div th:object="${user}">
+    <p th:text="*{username}"></p>
+</div>
+<a href="#" th:href="@{/day01?id={id}(id=${as[0]})}">访问day01, 带 RESTful 风格参数</a> <br/>
+<p th:text="1+2">3</p>
+<p th:if="${as.length == 3}" th:text="为true我就显示as的长度：+ ${as.length}">为true我就显示</p>
+
+</body>
+</html>
